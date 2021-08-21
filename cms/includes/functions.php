@@ -120,7 +120,8 @@ function show_posts_category(){
                 include "includes/show_posts.php";
                 
             }
-        }        
+        }
+        mysqli_stmt_close($stmt);        
     }  
 }
 

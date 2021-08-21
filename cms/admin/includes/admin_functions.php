@@ -47,12 +47,11 @@ function checkQuery($result){
 function show_categories(){
     global $connection;
 
-    $query = "SELECT * FROM categories";
-    $all_cat =mysqli_query($connection,$query);
+    $stmt = mysqli_prepare($connection, "SELECT cat_id, cat_title FROM categories");
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt,$cat_id,$cat_title);
 
-    while ($row=mysqli_fetch_assoc($all_cat)){
-        $cat_id = $row['cat_id'];
-        $cat_title = $row['cat_title'];
+    while (mysqli_stmt_fetch($stmt)){
         echo "
         <tr>
         <td>{$cat_id}</td>
@@ -66,6 +65,8 @@ function show_categories(){
         </td>
         </tr>" ;
     }
+
+    mysqli_stmt_close($stmt);
 }
 
 function add_category(){
@@ -81,10 +82,12 @@ function add_category(){
             
             
         }else{
-            $query= "INSERT INTO categories (cat_title) VALUES ('$cat_title')";
-            $add_category =mysqli_query($connection,$query);
-            
-            checkQuery($add_category);
+            $stmt = mysqli_prepare($connection, "INSERT INTO categories (cat_title) VALUES (?)");
+            checkQuery($stmt);
+            mysqli_stmt_bind_param($stmt,"s",$cat_title);
+            mysqli_stmt_execute($stmt);
+
+            mysqli_stmt_close($stmt);
         }
     }
 }
@@ -92,7 +95,7 @@ function add_category(){
 function delete_category(){
     global $connection;
     
-    if(isset($_GET['delete']) && $_SESSION['user_role'] == 'admin'){
+    if(isset($_GET['delete']) && isadmin()){
         $delete_cat_id = escape($_GET ['delete']);
         $query = "DELETE FROM categories WHERE cat_id = {$delete_cat_id}";
         $delete_cat = mysqli_query($connection,$query);

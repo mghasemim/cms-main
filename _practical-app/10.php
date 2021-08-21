@@ -1,5 +1,5 @@
-<?php include "functions.php" ?>
-<?php include "includes/header.php" ?>
+<?php include "functions.php"; ?>
+<?php include "includes/header.php";?>
 <section class="content">
 
 	<aside class="col-xs-4">
@@ -22,13 +22,33 @@
 
 		Step 5: Instantiate the class / create object and call it pitbull
 
-		Step 6: Call the method ShowAll
+Step 6: Call the method ShowAll
 
 	
 
 		
 	*/
-	
+	#1
+	class dog {
+		#2
+		var $eyecolor = 'green';
+		var $furcolor = 'black';
+
+
+		#3
+		function showall (){
+			echo $this->eyecolor;
+			echo $this->furcolor;
+
+		}
+	}
+	#3
+
+	$pitbull = new dog;
+	$pitbull -> showall();
+
+
+
 	?>
 
 
@@ -37,4 +57,4 @@
 
 </article><!--MAIN CONTENT-->
 
-<?php include "includes/footer.php" ?>
+<?php include "includes/footer.php"; ?>

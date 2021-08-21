@@ -1,5 +1,5 @@
-<?php include "functions.php" ?>
-<?php include "includes/header.php" ?>
+<?php include "functions.php"; ?>
+<?php include "includes/header.php";?>
 
 	<section class="content">
 
@@ -14,8 +14,24 @@
 		<article class="main-content col-xs-8">
 		
 
+<?php
+            
+$number1 = 10;
+$number2 = 20;
+ 
 
-		<?php
+    
+echo $number1 + $number2 . '<br>';
+    
+    
+$array1 = [1,23,5,6];
+    
+$array2 = array('name' => 'mammad');
+echo '<br>'; 
+echo $array1 [1] . '<br>';
+
+
+echo $array2 ['name'] ; 
 
 		/* Step 1: Make 2 variables called number1 and number2 and set 1 to value 10 and the other 20:
 
@@ -24,11 +40,7 @@
 
 		  Step3: Make 2 Arrays with the same values, one regular and the other associative
 
-		  Step4: Make a constant and set it to the value of PHP. and use an echo to print it out
-
-
-			
-
+		 
 			 */
 
 		
@@ -40,4 +52,4 @@
 
 		</article><!--MAIN CONTENT-->
 
-<?php include "includes/footer.php" ?>
+<?php include "includes/footer.php"; ?>

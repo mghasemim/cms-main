@@ -79,38 +79,49 @@ function show_posts_category(){
     if(isset($_GET['category'])){
         $post_category_id = mysqli_real_escape_string($connection, $_GET['category']);
 
-        if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
+        if(isadmin()){
         
-            $query = "SELECT * FROM posts WHERE post_category_id = {$post_category_id} AND post_status != 'denied'";
-            
+            $stmt1 = mysqli_prepare($connection, "SELECT post_id, post_title, post_author, post_date, post_image, post_content, post_view_count 
+            FROM posts WHERE post_category_id = ? AND post_status != ?");
+            $denied = "denied";
+            checkQuery($stmt1);
         }else{  
                 
-            $query = "SELECT * FROM posts WHERE post_category_id = {$post_category_id} AND post_status = 'published'";
+            $stmt2 = mysqli_prepare($connection, "SELECT post_id, post_title, post_author, post_date, post_image, post_content, post_view_count 
+            FROM posts WHERE post_category_id = ? AND post_status = ?");
+            $published = "published";
+            checkQuery($stmt2);
             
         }      
         
-    }   
-        $posts_category = mysqli_query($connection,$query);
-        checkQuery($posts_category);
-        
+        if(isset($stmt1)){
+            mysqli_stmt_bind_param($stmt1,"is",$post_category_id,$denied);
+            mysqli_stmt_execute($stmt1);
+            mysqli_stmt_bind_result($stmt1,$post_id,$post_title,$post_author,$post_date,$post_image,$post_content,$post_view_count);
+            $post_content = substr($post_content,0,200);
+            $stmt = $stmt1;
+        }else{
 
-        $count = mysqli_num_rows($posts_category);
-        if ($count == 0){
+            mysqli_stmt_bind_param($stmt2,"is",$post_category_id,$published);
+            mysqli_stmt_execute($stmt2);
+            mysqli_stmt_bind_result($stmt2,$post_id,$post_title,$post_author,$post_date,$post_image,$post_content,$post_view_count);
+            $post_content = substr($post_content,0,200);
+            $stmt = $stmt2;
+        }
+     
+      
+        mysqli_stmt_store_result($stmt);
+        if (mysqli_stmt_num_rows($stmt) === 0){
             echo "<h2>NO POST</h2>";
             
         }else{
 
-            while ($row = mysqli_fetch_assoc($posts_category)){
-                $post_id = $row['post_id'];
-                $post_title = $row['post_title'];
-                $post_author = $row['post_author'];
-                $post_date = $row['post_date'];
-                $post_image = $row['post_image'];
-                $post_content = substr($row['post_content'],0,200);
-                $post_view_count = $row['post_view_count'];
+            while (mysqli_stmt_fetch($stmt)){
                 include "includes/show_posts.php";
-            }    
-        }
+                
+            }
+        }        
+    }  
 }
 
 
@@ -322,6 +333,17 @@ function escape($string){
     return mysqli_real_escape_string($connection, trim($string));
 }
 
+function isadmin(){
+    if(isset($_SESSION['role'])){
+        if($_SESSION['role'] == 'admin'){
+            return true;
+        }else{
+            return false;
+        }
+    }else{
+        return false;
+    }
+}
 
 
 

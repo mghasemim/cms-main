@@ -34,9 +34,9 @@
         for($i=1; $i<=$counter; $i++){
 
             if($i == $page){
-                echo "<li><a class='active_link' href='index.php?page={$i}'>{$i}</a></li>";
+                echo "<li><a class='active_link' href='/demo/CMS/index/{$i}'>{$i}</a></li>";
             }else{
-                echo "<li><a href='index.php?page={$i}'>{$i}</a></li>";
+                echo "<li><a href='/demo/CMS/index/{$i}'>{$i}</a></li>";
             }
         }
         ?>

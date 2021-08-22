@@ -66,7 +66,7 @@ if (isset($_POST['update_post'])){
     }
 
 
-    header("Location: posts.php");
+    header("Location: /demo/cms/admin/posts");
 }
 ?>
 
@@ -173,15 +173,13 @@ if (isset($_POST['update_post'])){
     </div>
 
     <div class="form-group">
-        
         <input type="checkbox" name="reset" value="<?php echo $edit_post_id; ?>" id="reset">
         <label for="reset"> Reset Views Counter  </label>   
-       
     </div>
 
     <div class="form-group">
     <input class="btn btn-primary" type="submit" name="update_post" value="Update">  
-    <button class="btn btn-outline-primary" onclick="location.href='posts.php';" type="button">Cancel</button>
+    <button class="btn btn-outline-primary" onclick="location.href='/demo/cms/admin/posts';" type="button">Cancel</button>
     </div>
 
 </form>

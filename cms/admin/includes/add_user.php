@@ -24,7 +24,7 @@ if (isset($_POST['add_user'])){
     $add_users = mysqli_query($connection,$query);
     
     checkQuery($add_users);
-    header("Location: users.php");
+    header("Location: /demo/cms/admin/users");
 }
 
 
@@ -74,7 +74,7 @@ if (isset($_POST['add_user'])){
 
     <div class="form-group">
     <input class="btn btn-primary" type="submit" name="add_user" value="Add User">  
-    <button class="btn btn-outline-primary" onclick="location.href='users.php';" type="button">Cancel</button>
+    <button class="btn btn-outline-primary" onclick="location.href='/demo/cms/admin/users';" type="button">Cancel</button>
     </div>
 
 </form>

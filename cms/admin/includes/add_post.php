@@ -25,7 +25,7 @@ if (isset($_POST['create_post'])){
     
     checkQuery($add_posts);
     
-    header("Location: posts.php");
+    header("Location: /demo/cms/admin/posts");
 }
 
 ?>
@@ -112,7 +112,7 @@ if (isset($_POST['create_post'])){
 
     <div class="form-group">
     <input class="btn btn-primary" type="submit" name="create_post" value="Publish">  
-    <button class="btn btn-outline-primary" onclick="location.href='posts.php';" type="button">Cancel</button>
+    <button class="btn btn-outline-primary" onclick="location.href='/demo/cms/admin/posts';" type="button">Cancel</button>
     </div>
 
 </form>

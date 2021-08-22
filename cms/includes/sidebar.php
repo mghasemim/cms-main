@@ -3,7 +3,7 @@
 <!-- Blog Search Well -->
 <div class="well">
     <h4>Blog Search</h4>
-    <form action="search.php" method="post">
+    <form action="/demo/CMS/search" method="post">
     <div class="input-group">
         <input name="search" type="text" class="form-control">
         <span class="input-group-btn">
@@ -42,8 +42,8 @@
         <p class="text-muted"><?php  echo $username; ?></p>
         <p class="text-info"><?php  echo $user_role; ?></p>
         <div class="btn-group">
-            <a href="admin" class="m-t-10 waves-effect waves-dark btn btn-success btn-md btn-rounded" data-abc="true">Dashboard</a>
-            <a href="includes/logout.php" class="m-t-10 waves-effect waves-dark btn btn-warning btn-md btn-rounded" aria-disabled="true">Logout</a>
+            <a href="/demo/CMS/admin" class="m-t-10 waves-effect waves-dark btn btn-success btn-md btn-rounded" data-abc="true">Dashboard</a>
+            <a href="/demo/CMS/includes/logout" class="m-t-10 waves-effect waves-dark btn btn-warning btn-md btn-rounded" aria-disabled="true">Logout</a>
         </div>
     </div>    
 </div>
@@ -52,7 +52,7 @@
 <!-- Login -->
 
 <h4>Login</h4>
-    <form action="includes/login.php" method="post">
+    <form action="/demo/CMS/includes/login" method="post">
     <div class="form-group">
         <input name="username" type="text" class="form-control" placeholder="Enter Username">
     </div>
@@ -65,7 +65,7 @@
     </div>
     
     <div class="text-center">
-    <a href="registration.php" class="btn">Sign Up</a>
+    <a href="/demo/CMS/registration.php" class="btn">Sign Up</a>
     </div>
     </form>
 

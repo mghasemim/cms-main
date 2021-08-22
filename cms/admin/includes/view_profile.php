@@ -50,6 +50,6 @@ if(isset($_SESSION['id'])){
 
    
     
-    <button class="btn btn-primary" onclick="location.href='profile.php?source=edit_profile';" type="button">Edit Profile</button>
+    <button class="btn btn-primary" onclick="location.href='/demo/cms/admin/profile/edit_profile';" type="button">Edit Profile</button>
   
 

@@ -78,14 +78,14 @@ if(isset($_GET['edit'])){
             $update_users = mysqli_query($connection,$query);
 
             checkQuery($update_users);
-            header("Location: users.php");
+            header("Location: /demo/cms/admin/users");
         }
     }
 
 
 
 }else{
-    header("Location: index.php");
+    header("Location: /demo/cms/admin/index");
 }
 ?>
 
@@ -154,7 +154,7 @@ if(isset($_GET['edit'])){
 
     <div class="form-group">
     <input class="btn btn-primary" type="submit" name="update_user" value="Update User">  
-    <button class="btn btn-outline-primary" onclick="location.href='users.php';" type="button">Cancel</button>
+    <button class="btn btn-outline-primary" onclick="location.href='/demo/cms/admin/users';" type="button">Cancel</button>
     </div>
 
 </form>

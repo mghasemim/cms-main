@@ -12,7 +12,7 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li><a href="">Users Online: <span class="usersOnline"></span></a></li>
-                <li><a href="../index.php"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="/demo/cms/index"><i class="fa fa-home fa-lg"></i></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                      <?php
@@ -27,11 +27,11 @@
                     <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="/demo/cms/admin/profile"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="/demo/cms/includes/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -79,10 +79,10 @@
 ?>
                 <ul class="nav navbar-nav side-nav">
                     <li class="<?php echo $dashboard_class ?>">
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="/demo/cms/admin/index"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="<?php echo $posts_class ?>">
-                        <a href="posts.php"><i class="fa fa-fw fa-file-text"></i> Posts</a>
+                        <a href="/demo/cms/admin/posts"><i class="fa fa-fw fa-file-text"></i> Posts</a>
                     </li>
                     <!--
                         <---dropdown menu---.>
@@ -100,18 +100,18 @@
                 <?php if(isadmin()){ ?>
                    
                     <li class="<?php echo $categories_class ?>">
-                        <a href="categories.php"><i class="fa fa-fw fa-list"></i> Categories</a>
+                        <a href="/demo/cms/admin/categories"><i class="fa fa-fw fa-list"></i> Categories</a>
                     </li>
                 <?php  } ?>
                     <li class="<?php echo $comments_class ?>">
-                        <a href="comments.php"><i class="fa fa-fw fa-comments"></i> Comments</a>
+                        <a href="/demo/cms/admin/comments"><i class="fa fa-fw fa-comments"></i> Comments</a>
                     </li>
                 <?php if(isadmin()){ ?>                    
                     <li class="<?php echo $users_class ?>">
                         <a href="javascript:;" data-toggle="collapse" data-target="#users_dropdown"><i class="fa fa-fw fa-users"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="users_dropdown" class="<?php echo $collapse_class ?>">
                             <li>
-                                <a href="users.php">View Users</a>
+                                <a href="/demo/cms/admin/users">View Users</a>
                             </li>
                             <li>
                                 <a href="users.php?source=add_user">Add User</a>
@@ -120,7 +120,7 @@
                     </li>
                 <?php  } ?>
                     <li class="<?php echo $profile_class ?>">
-                        <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        <a href="/demo/cms/admin/profile"><i class="fa fa-fw fa-user"></i> Profile</a>
                     </li>
                 </ul>
             </div>

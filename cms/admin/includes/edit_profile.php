@@ -61,7 +61,7 @@ if (isset($_POST['update_profile'])){
         $update_profile = mysqli_query($connection,$query);
         
         checkQuery($update_profile);
-        header("Location: profile.php");
+        header("Location: /demo/cms/admin/profile");
     }
 }
 ?>
@@ -102,7 +102,7 @@ if (isset($_POST['update_profile'])){
    
     <div class="form-group">
     <input class="btn btn-primary" type="submit" name="update_profile" value="Update Profile">  
-    <button class="btn btn-outline-primary" onclick="location.href='profile.php';" type="button">Cancel</button>
+    <button class="btn btn-outline-primary" onclick="location.href='/demo/cms/admin/profile';" type="button">Cancel</button>
     </div>
 
 </form>

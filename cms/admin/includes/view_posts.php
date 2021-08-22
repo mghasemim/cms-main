@@ -106,7 +106,7 @@ if(isset($_POST['checkBoxArray'])){
 
     <div class="col-xs-4">
     <input type="submit" name="submit" class="btn btn-success" value="Apply">
-    <a href="posts.php?source=add_post" class="btn btn-primary">Add Post</a>
+    <a href="/demo/cms/admin/posts/add_post" class="btn btn-primary">Add Post</a>
     </div>
 
     <thead>
@@ -216,14 +216,14 @@ if(isadmin()){
         <tr>
         <td><input type="checkbox" name="checkBoxArray[]" class="checkBoxes" value="<?php echo $post_id;?>"></td>
        <?php
-        echo "<td><a href='../post.php?p_id={$post_id}'>{$post_id}</a></td>
-        <td><a href='posts.php?category={$cat_id}'>{$cat_title}</a></td>
-        <td><a href='../post.php?p_id={$post_id}'>{$post_title}</a></td>
-        <td><a href='posts.php?author={$post_author}'>{$post_author}</a></td>
+        echo "<td><a href='/demo/cms/post/{$post_id}'>{$post_id}</a></td>
+        <td><a href='/demo/cms/admin/posts/category/{$cat_id}'>{$cat_title}</a></td>
+        <td><a href='/demo/cms/post/{$post_id}'>{$post_title}</a></td>
+        <td><a href='/demo/cms/admin/posts/author/{$post_author}'>{$post_author}</a></td>
         <td><img width='100' src='../images/$post_image' alt='$post_image'></td>
         <td>{$post_content}</td>";
         echo "<td>{$post_tags}</td>
-        <td><a href='comments.php?p_id={$post_id}'>{$post_comment_count}</a></td>
+        <td><a href='/demo/cms/admin/comments/{$post_id}'>{$post_comment_count}</a></td>
         <td>{$post_view_count}</td>
         <td>{$post_date}</td>
         <td>{$post_status}</td>";      
@@ -232,8 +232,8 @@ if(isadmin()){
             <?php //if(isset($author)) {$author_get = "&author=".$author;} ?>
             <!-- <button class='btn btn-light btn-sm' type='button' onclick="location.href='posts.php?delete=<?php // echo $post_id; if(isset($author)){echo $author_get;} ?>'; javascript: return confirm('are u sure want to delete <?php //echo $post_title; ?>');"><i class='fa fa-trash'></i></button> -->
             <a class='btn btn-light btn-sm delete_link' auth="<?php if(isset($author)){echo '&author=' . $author;} ?>" rel="<?php echo $post_id; ?>" href="javascript:void(0)"><i class='fa fa-trash'></i></a>
-            <button class='btn btn-light btn-sm' type='button' onclick="location.href='posts.php?source=edit_post&edit=<?php echo $post_id; ?>';"><i class='fa fa-edit'></i></button>
-            <button class='btn btn-light btn-sm' type='button' onclick="location.href='../post.php?p_id=<?php echo $post_id; ?>';"><i class='fa fa-arrow-right'></i></button>
+            <button class='btn btn-light btn-sm' type='button' onclick="location.href='/demo/cms/admin/posts/edit_post/<?php echo $post_id; ?>';"><i class='fa fa-edit'></i></button>
+            <button class='btn btn-light btn-sm' type='button' onclick="location.href='/demo/cms/post/<?php echo $post_id; ?>';"><i class='fa fa-arrow-right'></i></button>
         </td>
         </tr>    
 <?php    } ?>    

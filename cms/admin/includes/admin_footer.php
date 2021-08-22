@@ -4,10 +4,10 @@
     <!-- jQuery -->
    
 
-    <script src="js/scripts.js"></script>
+    <script src="/demo/cms/admin/js/scripts.js"></script>
     
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/demo/cms/admin/js/bootstrap.min.js"></script>
    
 </body>
 

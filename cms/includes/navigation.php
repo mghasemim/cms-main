@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/demo/CMS/index.php">Home Page</a>
+                <a class="navbar-brand" href="/demo/CMS/index">Home Page</a>
             </div>
             
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,7 +18,7 @@
                 <ul class="nav navbar-nav">
                 
                     <?php show_categories();?>
-                    <li class="<?php echo $contact_class ?>"><a href="contact.php">Contact Us</a></li>
+                    <li class="<?php echo $contact_class ?>"><a href="/demo/cms/contact">Contact Us</a></li>
                 </ul>
             </div>
            

@@ -239,7 +239,7 @@ function show_post(){
                 include "includes/show_posts.php";                
                 
             }else{
-                header("Location: index.php");
+                header("Location: /demo/cms/index");
             }  
             
         }
@@ -269,7 +269,7 @@ function show_categories(){
             $contact_class = "active";
         }
 
-        echo "<li class='{$cat_class}'><a href='category.php?category={$cat_id}'>{$cat_title}</a></li>";
+        echo "<li class='{$cat_class}'><a href='/demo/cms/category/{$cat_id}'>{$cat_title}</a></li>";
         }
         
 
@@ -325,7 +325,7 @@ function register_user($username, $email, $password){
         $register = mysqli_query($connection,$query);
         checkQuery($register);
 
-        $message = "<h6 class='text-center bg-success'>Welcome To Our Family   <a href='index.php'>Log In</a></h6>";
+        $message = "<h6 class='text-center bg-success'>Welcome To Our Family   <a href='/demo/cms/index'>Log In</a></h6>";
 }
 
 function escape($string){

@@ -43,7 +43,7 @@
 ?>      
         <td class='text-center'>  
             <button class='btn btn-light btn-sm' type='button' onclick="location.href='users.php?delete=<?php echo $user_id; ?>';" ><i class='fa fa-trash'></i></button>
-            <button class='btn btn-light btn-sm' type='button' onclick="location.href='users.php?source=edit_user&edit=<?php echo $user_id; ?>';"><i class='fa fa-edit'></i></button>
+            <button class='btn btn-light btn-sm' type='button' onclick="location.href='/demo/cms/admin/users/edit_user/<?php echo $user_id; ?>';"><i class='fa fa-edit'></i></button>
         </td>
         </tr>    
 <?php    } ?>    
@@ -62,7 +62,7 @@
         $delete_user = mysqli_query($connection,$query);
 
         checkQuery($delete_user);
-        header("Location: users.php"); 
+        header("Location: /demo/cms/admin/users"); 
 
     }
 
@@ -73,7 +73,7 @@
         $admin_user = mysqli_query($connection,$query);
 
         checkQuery($admin_user);
-        header("Location: users.php"); 
+        header("Location: /demo/cms/admin/users"); 
 
     }
 
@@ -84,7 +84,7 @@
         $sub_user = mysqli_query($connection,$query);
 
         checkQuery($sub_user);
-        header("Location: users.php"); 
+        header("Location: /demo/cms/admin/users"); 
 
     }
 

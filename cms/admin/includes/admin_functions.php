@@ -100,7 +100,7 @@ function delete_category(){
         $query = "DELETE FROM categories WHERE cat_id = {$delete_cat_id}";
         $delete_cat = mysqli_query($connection,$query);
         checkQuery($delete_cat);
-        header("Location: categories.php");
+        header("Location: /demo/cms/admin/categories");
     }
 }
 
@@ -126,7 +126,7 @@ function update_category(){
                 $edit_category =mysqli_query($connection,$query);
                 
                 checkQuery($edit_category);
-                header("Location: categories.php");    
+                header("Location: /demo/cms/admin/categories");    
             }
         }
     }

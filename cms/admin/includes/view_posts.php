@@ -161,7 +161,7 @@ if(isadmin()){
     posts.post_content, posts.post_tags, posts.post_view_count, posts.post_date, posts.post_status,
     categories.cat_id, categories.cat_title  
     FROM posts
-    LEFT JOIN categories ON posts.post_category_id = categories.cat_id";   
+    LEFT JOIN categories ON posts.post_category_id = categories.cat_id ORDER BY post_id DESC";   
     
     }
 }else{
@@ -220,7 +220,7 @@ if(isadmin()){
         <td><a href='/demo/cms/admin/posts/category/{$cat_id}'>{$cat_title}</a></td>
         <td><a href='/demo/cms/post/{$post_id}'>{$post_title}</a></td>
         <td><a href='/demo/cms/admin/posts/author/{$post_author}'>{$post_author}</a></td>
-        <td><img width='100' src='../images/$post_image' alt='$post_image'></td>
+        <td><img width='100' src='/demo/cms/images/$post_image' alt='$post_image'></td>
         <td>{$post_content}</td>";
         echo "<td>{$post_tags}</td>
         <td><a href='/demo/cms/admin/comments/{$post_id}'>{$post_comment_count}</a></td>

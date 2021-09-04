@@ -10,19 +10,19 @@
         if(isset($_SESSION['role'])){
             if(isset($_GET['p_id'])){
        ?>
-        <a class="btn btn-default" href="admin/posts.php?source=edit_post&edit=<?php echo $post_id; ?>">Edit Post</a>
+        <a class="btn btn-default" href="/demo/cms/admin/posts/edit_post/<?php echo $post_id; ?>">Edit Post</a>
         <?php } }?>
         </span></p>
         <hr>
-        <a href="post.php?p_id=<?php echo $post_id; ?>">
-        <img class="img-responsive" src="images/<?php echo $post_image; ?>" alt="<?php echo $post_image; ?>">
+        <a href="/demo/cms/post/<?php echo $post_id; ?>">
+        <img class="img-responsive" src="/demo/cms/images/<?php echo $post_image; ?>" alt="<?php echo $post_image; ?>">
         </a>
         <hr>
         <p><?php echo $post_content; ?></p>
         <?php 
         if(!isset($_GET['p_id'])){ 
          ?>
-        <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-primary" href="/demo/cms/post/<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
         <?php 
         }
          ?>

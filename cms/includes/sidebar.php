@@ -51,8 +51,19 @@
 <?php }else{ ?>
 <!-- Login -->
 
+<?php 
+
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    login_user($username,$password);
+}
+
+?>
+
 <h4>Login</h4>
-    <form action="/demo/CMS/includes/login" method="post">
+    <form action="" method="post">
     <div class="form-group">
         <input name="username" type="text" class="form-control" placeholder="Enter Username">
     </div>
@@ -63,9 +74,9 @@
             </button>
         </span>
     </div>
-    
-    <div class="text-center">
-    <a href="/demo/CMS/registration.php" class="btn">Sign Up</a>
+    <div class="form-group">
+        <a href="/demo/CMS/registration.php" class="btn pull-left">Sign Up</a>
+        <a href="forgot.php?token=<?php echo uniqid(true); ?>" class="btn pull-right">Forgot Password</a>
     </div>
     </form>
 

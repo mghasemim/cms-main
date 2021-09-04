@@ -20,7 +20,17 @@
                     <?php show_categories();?>
                     <li class="<?php echo $contact_class ?>"><a href="/demo/cms/contact">Contact Us</a></li>
                 </ul>
+                <ul class="nav navbar-right navbar-nav top-nav">
+                    <?php if(isLoggedIn()){ ?> 
+                        <li class="btn-group"><a href="/demo/CMS/admin" class="m-t-10 waves-effect waves-dark btn btn-md btn-rounded" data-abc="true">Dashboard</a>
+                        <a href="/demo/CMS/includes/logout" class="m-t-10 waves-effect waves-dark btn btn-md btn-rounded" aria-disabled="true">Logout</a></li>
+                   <?php }else{ ?>
+                    <li class="btn-group"><a href="/demo/CMS/registration" class="m-t-10 waves-effect waves-dark btn btn-md btn-rounded" data-abc="true">Register</a>
+                    <a href="/demo/CMS/login" class="m-t-10 waves-effect waves-dark btn btn-md btn-rounded" aria-disabled="true">Login</a></li>
+                    <?php } ?>
+                </ul>
             </div>
+           
            
             <!-- /.navbar-collapse -->
         </div>

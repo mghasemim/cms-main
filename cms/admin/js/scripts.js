@@ -48,7 +48,7 @@ $(document).ready(function(){
 
 function countUsersOnline(){
 
-    $.get("includes/admin_functions.php?onlineusers=result", function(data){
+    $.get("/demo/cms/admin/includes/admin_functions.php?onlineusers=result", function(data){
 
         $(".usersOnline").text(data);
 

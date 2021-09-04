@@ -12,7 +12,7 @@ function usersOnline(){
     $session = session_id();
     $time = time();
     $timeout_seconds = 05 ;
-    $timeout = $time + $timeout_seconds;
+    $timeout = $time - $timeout_seconds;
 
     $query = "SELECT * FROM users_online WHERE session = '{$session}'";
     $find_session = mysqli_query($connection, $query);
@@ -26,7 +26,7 @@ function usersOnline(){
         $session_timer = mysqli_query($connection, $query);
     }
     
-    $query = "SELECT * FROM users_online  WHERE time < {$timeout}";
+    $query = "SELECT * FROM users_online  WHERE time > '{$timeout}'";
     $find_online_users = mysqli_query($connection, $query);
    echo $users_online = mysqli_num_rows($find_online_users);
         }

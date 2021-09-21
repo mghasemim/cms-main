@@ -11,6 +11,21 @@ function checkQuery($result){
     }   
 }
 
+
+function imagePlaceholder($image = ""){
+
+    if(!$image){
+
+        return "placeholder.png";
+
+    }else{
+
+        return $image;
+
+    }
+
+}
+
 function show_posts(){
     global $connection;
     global $counter;

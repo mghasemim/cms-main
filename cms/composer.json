@@ -1,0 +1,23 @@
+{
+    "name": "mohamadreza/cms",
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    },
+
+    "autoload":{
+
+        "classmap":[
+
+            "classes"
+
+        ]
+
+    },
+
+    "authors": [
+        {
+            "name": "mohamadreza",
+            "email": "mohamadreza.ghasemi1383@gmail.com"
+        }
+    ]
+}

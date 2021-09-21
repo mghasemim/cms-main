@@ -50,6 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(empty($error)){
         register_user($username, $email, $password);
+        redirect("login.php");
     }else{
         $message = ""; 
     }

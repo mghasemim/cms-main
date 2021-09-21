@@ -8,6 +8,8 @@
 
     $connection = mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 
+    mysqli_set_charset($connection, "utf-8");
+
 if(!$connection) {
     echo "db connection failed";
     

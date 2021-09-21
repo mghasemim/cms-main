@@ -15,7 +15,7 @@
         </span></p>
         <hr>
         <a href="/demo/cms/post/<?php echo $post_id; ?>">
-        <img class="img-responsive" src="/demo/cms/images/<?php echo $post_image; ?>" alt="<?php echo $post_image; ?>">
+        <img class="img-responsive" src="/demo/cms/images/<?php echo imagePlaceholder($post_image); ?>" alt="<?php echo $post_image; ?>">
         </a>
         <hr>
         <p><?php echo $post_content; ?></p>
